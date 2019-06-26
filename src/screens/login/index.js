@@ -6,7 +6,7 @@ import { Field, reduxForm } from "redux-form";
 import validator from "validator";
 
 
-import  InputText from "../../components/inputField";
+import  InputText from "../../components/inputText";
 import Button from "../../components/button";
 
 import styles from './styles';

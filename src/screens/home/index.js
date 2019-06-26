@@ -3,7 +3,7 @@ import React, {Component} from "react";
 import {View, Text,DrawerLayoutAndroid,Platform,SafeAreaView} from "react-native";
 import styles from "./styles";
 import Toolbar from "../../components/toolbar";
-import Sidebar from "../../components/sidebar";
+import Sidebar from "../sidebar";
 
 // const propTypes = {
 //     onbackPress: PropTypes.func,

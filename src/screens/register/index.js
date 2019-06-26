@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Text, View, TouchableOpacity,ActivityIndicator, TextInput, Image} from 'react-native';
 import styles from "./styles";
 import ButtonComponent from "../../components/button";
-import Input from "../../components/inputField";
+import Input from "../../components/inputText";
 import Title from "../../components/title";
 import {Actions} from "react-native-router-flux";
 import {connect} from "react-redux";

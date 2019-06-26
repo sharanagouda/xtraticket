@@ -1,50 +1,35 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+import React from 'react';
+import {Provider} from "react-redux";
+import {PersistGate} from "redux-persist/integration/react";
+import firebase from 'firebase';
+import Main from "./src/Main";
+import storePersist from "./src/config/Store";
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+const persist = storePersist();
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+export default class App extends React.Component {
 
-type Props = {};
-export default class App extends Component<Props> {
+  componentWillMount() {
+    const config = {
+    apiKey: "AIzaSyClDtv9JU3bM0Isw2S5BvbpmB_Ok2ZIq08",
+    authDomain: "xtraticket-2cd36.firebaseapp.com",
+    databaseURL: "https://xtraticket-2cd36.firebaseio.com",
+    projectId: "xtraticket-2cd36",
+    storageBucket: "",
+    messagingSenderId: "785388275162",
+    appId: "1:785388275162:web:72f390ee7f118e61"
+    };
+    firebase.initializeApp(config);
+  }
+
+
   render() {
-    console.log("hi9");
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
+      <Provider store={persist}>
+           <PersistGate loading={null} persistor={persist}>
+              <Main />
+          </PersistGate>
+      </Provider>
     );
   }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+};

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View, TouchableNativeFeedback,Image, ScrollView} from 'react-native';
 
-import styles from "./Styles";
+import styles from "./styles";
 import { Actions } from 'react-native-router-flux';
 
 class Sidebar extends React.Component {
