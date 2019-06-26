@@ -10,20 +10,23 @@ import EditProfile from "../screens/editProfile";
 import Sidebar from "../screens/register";
 import PostTicket from "../screens/postTicket";
 
+import {Icon } from "react-native-elements";
+
+const HomeIcon =()=> <Icon name = "home" size={25}/>
 
 class RouteComponent extends Component{
     render(){
         return(
             <Router>
                 <Stack key="root" hideNavBar>
-                    <Stack key="auth">
-                   
+                {/*    <Stack key="auth">
+                    
                         <Scene key="login" component={Login}/>
                         <Scene key="register" component={Register} />
-                    </Stack>
+        </Stack>*/}
                     <Stack key="app" hideNavBar panHandler={null}>
                         <Tabs>
-                            <Scene key="home" component={Home} title="Home"/>
+                            <Scene key="home" component={Home} title="Home" icon={HomeIcon}/>
                             <Scene key="postTicket" component={PostTicket} title="Post Ticket"/> 
                             <Scene key="editProfile"  component={EditProfile} title="Edit Profile"/>
                         </Tabs>
