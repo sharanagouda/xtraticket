@@ -24,7 +24,7 @@
     "redux-form": "^8.2.4",
     "redux-persist": "^5.10.0",
     "redux-thunk": "^2.3.0",
-    "validator": "^11.0.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
